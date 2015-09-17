@@ -1,2 +1,16 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
+<center>
+  <h4 style="color:white;">MiniGame : BINGO!</h4>
+  <form action="/main/enter" method="POST">
+    <div class="row">
+      <div class="input-field col s12">
+        <label for="nickname">Nickname</label>
+        <input type="text" placeholder="Nickname" name="nickname" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="content col s12">
+        <button type="submit" class="btn waves-effect waves-light" style="background-color:#F39800;width:100%">ENTER</button>
+      </div>
+    </div>
+  </form>
+</center>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917132940) do
+ActiveRecord::Schema.define(version: 20150917220217) do
 
   create_table "animals", force: :cascade do |t|
     t.string   "name"
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20150917132940) do
     t.datetime "updated_at",                 null: false
   end
 
-  create_table "bingos", force: :cascade do |t|
+  create_table "boards", force: :cascade do |t|
     t.integer  "user_id"
+    t.boolean  "confirmed",  default: false
     t.integer  "cell_00"
     t.integer  "cell_01"
     t.integer  "cell_02"
@@ -71,8 +72,8 @@ ActiveRecord::Schema.define(version: 20150917132940) do
     t.integer  "cell_64"
     t.integer  "cell_65"
     t.integer  "cell_66"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|

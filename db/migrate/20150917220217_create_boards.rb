@@ -1,7 +1,8 @@
-class CreateBingos < ActiveRecord::Migration
+class CreateBoards < ActiveRecord::Migration
   def change
-    create_table :bingos do |t|
+    create_table :boards do |t|
       t.integer :user_id
+      t.boolean :confirmed, default: false
       t.integer :cell_00, default: nil
       t.integer :cell_01, default: nil
       t.integer :cell_02, default: nil
