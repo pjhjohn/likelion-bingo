@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root :to => "main#index"
-  get 'main/index'
-  get 'bingo/index'
-  post 'main/enter'
+  match "main"       , :to => "main#index" , :via => [:get]
+  match "main/index" , :to => "main#index" , :via => [:get]
+  match "main/enter" , :to => "main#enter" , :via => [:post]
+  match "bingo"      , :to => "bingo#index", :via => [:get]
+  match "bingo/index", :to => "bingo#index", :via => [:get]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
