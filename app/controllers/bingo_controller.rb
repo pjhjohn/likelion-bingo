@@ -46,9 +46,12 @@ class BingoController < ApplicationController
         animal = Animal.where(name: params[:animal]).first
         unless animal.nil?
           @boardRecord.send("#{params[:cell]}=", animal.id)
+          animal.count = animal.count + 1
+          animal.save
           @boardRecord.save
         else
           animal2create = Animal.new
+          animal2create.count = 1
           animal2create.name = params[:animal]
           animal2create.save
           @boardRecord.send("#{params[:cell]}=", animal2create.id)
@@ -60,13 +63,15 @@ class BingoController < ApplicationController
   end
 
   def confirm
+=begin
     board = Board.find_by_id(params[:id])
     if board.nil?
       redirect_to :back
     else
       board.confirm = true;
       board.save
-      redirect_to "/bingo/index"
     end
+=end
+    redirect_to "/bingo/index"
   end
 end
